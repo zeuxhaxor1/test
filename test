@@ -3,9 +3,12 @@
 # Check if google.com has "google" in the content
 echo "Checking if google.com has 'google' content..."
 
+# File where we will save the result
+output_file="google_check_result.txt"
+
 # Use curl to fetch the page content and pipe it to grep to search for 'google'
 if curl -s https://www.google.com | grep -qi "google"; then
-  echo "The content of google.com contains 'google'."
+  echo "The content of google.com contains 'google'." > "$output_file"
 else
-  echo "The content of google.com does NOT contain 'google'."
+  echo "The content of google.com does NOT contain 'google'." > "$output_file"
 fi
