@@ -1,0 +1,11 @@
+#!/bin/bash
+
+# Check if google.com has "google" in the content
+echo "Checking if google.com has 'google' content..."
+
+# Use curl to fetch the page content and pipe it to grep to search for 'google'
+if curl -s https://www.google.com | grep -qi "google"; then
+  echo "The content of google.com contains 'google'."
+else
+  echo "The content of google.com does NOT contain 'google'."
+fi
